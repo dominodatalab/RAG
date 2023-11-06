@@ -69,7 +69,6 @@ if clear_button:
     st.session_state['messages'] = [
         {"role": "system", "content": "You are a helpful assistant."}
     ]
-    memory.clear()
     
 
 if qdrant_key:
