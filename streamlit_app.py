@@ -73,12 +73,12 @@ if clear_button:
     
 
 if qdrant_key:
-    doc_store = Qdrant.from_texts(texts,
-                          metadatas=metadatas,
-                          embedding=embeddings,
-                          url=qdrant_url,
-                          api_key=qdrant_key,
-                          collection_name=f"medical_qa_search")
+    client = QdrantClient(url=qdrant_url,api_key=qdrant_key)
+    
+    doc_store = Qdrant(
+        client=client,
+        collection_name="medical_qa_search",
+        embeddings=embeddings)
 
 
 
@@ -112,5 +112,5 @@ with container:
     if st.session_state['generated']:
         with response_container:
             for i in range(len(st.session_state['generated'])):
-                message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-                message(st.session_state["generated"][i], key=str(i))
+                message(st.session_state["past"][i], is_user=True, logo='https://freesvg.org/img/1367934593.png', key=str(i) + '_user')
+                message(st.session_state["generated"][i], logo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6e8aarUy37BOHMTSk-TUcs4AyAy3pfAHL-F2K49KHNEbI0QUlqWJFEqXYQvlBdYMMJA&usqp=CAU', key=str(i))
