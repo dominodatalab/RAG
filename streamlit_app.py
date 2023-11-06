@@ -102,11 +102,13 @@ with container:
         user_input = st.text_area("You:", key='input', height=100)
         submit_button = st.form_submit_button(label='Send')
     if submit_button and user_input and qa_chain:
+        answer = None
         with st.spinner("Searching for the answer..."):
             result = qa_chain(user_question)
-        answer = result["result"]
-        st.session_state['past'].append(user_input)
-        st.session_state['generated'].append(answer)
+        if result:
+            answer = result["result"]
+            st.session_state['past'].append(user_input)
+            st.session_state['generated'].append(answer)
         
     if st.session_state['generated']:
         with response_container:
