@@ -104,7 +104,7 @@ with container:
     if submit_button and user_input and qa_chain:
         answer = None
         with st.spinner("Searching for the answer..."):
-            result = qa_chain(user_question)
+            result = qa_chain(user_input)
         if result:
             answer = result["result"]
             st.session_state['past'].append(user_input)
