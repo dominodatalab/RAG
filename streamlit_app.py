@@ -3,12 +3,12 @@ import pickle
 import random
 import streamlit as st
 
-
 from langchain import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatAnthropic
 from langchain.embeddings import HuggingFaceBgeEmbeddings
 from langchain.vectorstores.qdrant import Qdrant
+from qdrant_client import QdrantClient
 
 from streamlit.web.server import websocket_headers
 from streamlit_chat import message
