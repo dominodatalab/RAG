@@ -57,7 +57,7 @@ if 'messages' not in st.session_state:
 
 st.set_page_config(initial_sidebar_state='collapsed')
 anthropic_key = st.sidebar.text_input("Enter your Anthropic API key", type="password")
-qdrant_key = st.sidebar.text_input("Enter your Anthropic API key", type="password")
+qdrant_key = st.sidebar.text_input("Enter your Qdrant API key", type="password")
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 qa_chain = None
