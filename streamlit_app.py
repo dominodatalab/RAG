@@ -14,8 +14,6 @@ from streamlit.web.server import websocket_headers
 from streamlit_chat import message
 
 
-os.environ['ANTHROPIC_API_KEY'] = getpass("Enter Anthropic key:")
-os.environ['QDRANT_API_KEY'] = getpass("Enter Qdrant API key:")
 qdrant_url = 'https://58de2381-e750-4aed-8eb2-7b08d8faf30b.us-east4-0.gcp.cloud.qdrant.io:6333'
 os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/mnt/data/RAG-mktg/model_cache/'
 
@@ -51,7 +49,7 @@ chain_type_kwargs = {"prompt": PROMPT}
 
 # Uncomment if you want to store and use the OpenAI key stored in an environment variable
 anthropic_key = os.getenv('ANTHROPIC_API_KEY') 
-
+qdrant_key = os.environ['QDRANT_API_KEY']
 
 # Initialise session state variables
 if 'generated' not in st.session_state:
@@ -66,6 +64,7 @@ if 'messages' not in st.session_state:
 
 st.set_page_config(initial_sidebar_state='collapsed')
 anthropic_key = st.sidebar.text_input("Enter your Anthropic API key", type="password")
+qdrant_key = st.sidebar.text_input("Enter your Anthropic API key", type="password")
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 qa_chain = None
