@@ -1,7 +1,7 @@
 # LocalRAG
 
 ## Files
-*  RAG.ipynb : This notebook contains the logic to load embeddings, setup the QA chain for RAG and allows users to ask queries once all the hyperparameters have been finalized.
+*  RAG.ipynb : This notebook contains all the logic to load embeddings, setup the QA chain for RAG and allows users to ask queries once all the hyperparameters have been finalized.
   
 *  MLflow_eval.ipynb : This notebook contains code to evaluate a RAG pipeline for faithfulness and relevance using Mlflow. The metrics are also stored and can be visualized in the Experiments tab in Domino
   
