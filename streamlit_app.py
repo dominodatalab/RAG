@@ -15,7 +15,7 @@ from streamlit_chat import message
 
 
 qdrant_url = 'https://58de2381-e750-4aed-8eb2-7b08d8faf30b.us-east4-0.gcp.cloud.qdrant.io:6333'
-os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/mnt/data/RAG-mktg/model_cache/'
+os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/mnt/data/MedRAG/model_cache/'
 
 
 model_kwargs = {'device': 'cpu'}
