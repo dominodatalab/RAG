@@ -1,4 +1,4 @@
-# LocalRAG
+# RAG
 
 ## Files
 *  RAG.ipynb : This notebook contains all the logic to load embeddings, setup the QA chain for RAG and allows users to ask queries once all the hyperparameters have been finalized.
