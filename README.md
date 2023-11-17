@@ -1,5 +1,14 @@
 # LocalRAG
 
+## Files
+*  RAG.ipynb : This notebook contains the logic to load embeddings, setup the QA chain for RAG and allows users to ask queries once all the hyperparameters have been finalized.
+*  MLflow_eval.ipynb : This notebook contains code to evaluate a RAG pipeline for faithfulness and relevance using Mlflow. The metrics are also stored and can be visualized in the Experiments tab in Domino
+*  RAGAS_eval.ipynb : This notebook uses the RAGAS package to evaluate a RAG pipeline. This is another example of how to evaluate a RAG pipeline, RAGAS offers a couple of more metrics than MLFlow
+*  example_prompts.txt : Has a few examples of questions that can be presented as prompts to the QA chain
+*  app.sh : Script required to setup and use Streamlit in Domino
+*  streamlit_app.py : This file contains code that sets up the UI and workflow for a Streamlit chatbot
+
+
 ## Environment Setup
 
 ### Custom base image 
