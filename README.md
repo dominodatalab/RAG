@@ -11,7 +11,7 @@
   
 *  app.sh : Script required to setup and use Streamlit in Domino
   
-*  streamlit_app.py : This file contains code that sets up the UI and workflow for a Streamlit chatbot
+*  streamlit_app.py : This file contains code that sets up the UI and workflow for a Streamlit chatbot. The app needs an Anthropic and Qdrant key to set in the sidebar to run
 
 On `se-demo` this was run on a `Medium` hardware tier
 
