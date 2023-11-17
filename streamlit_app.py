@@ -39,11 +39,6 @@ PROMPT = PromptTemplate(template=prompt_template, input_variables=["context","qu
 #
 chain_type_kwargs = {"prompt": PROMPT}
 
-
-# Uncomment if you want to store and use the OpenAI key stored in an environment variable
-anthropic_key = os.getenv('ANTHROPIC_API_KEY') 
-qdrant_key = os.environ['QDRANT_API_KEY']
-
 # Initialise session state variables
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
@@ -59,6 +54,13 @@ st.set_page_config(initial_sidebar_state='collapsed')
 anthropic_key = st.sidebar.text_input("Enter your Anthropic API key", type="password")
 qdrant_key = st.sidebar.text_input("Enter your Qdrant API key", type="password")
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
+
+# Comment below lines if you don't want to read default keys from env vars
+if anthropic_key is None:
+  anthropic_key = os.getenv('ANTHROPIC_API_KEY') 
+
+if qdrant_key is None:
+  qdrant_key = os.environ['QDRANT_API_KEY']
 
 qa_chain = None
 doc_store = None
@@ -83,7 +85,7 @@ if qdrant_key:
 
 if doc_store and anthropic_key:
     rag_llm = ChatAnthropic(temperature=0,
-                            anthropic_api_key=os.environ["ANTHROPIC_API_KEY"])
+                            anthropic_api_key=anthropic_key)
     
     qa_chain = RetrievalQA.from_chain_type(llm=rag_llm,
                                        chain_type="stuff",
