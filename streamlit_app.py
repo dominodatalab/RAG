@@ -56,10 +56,10 @@ qdrant_key = st.sidebar.text_input("Enter your Qdrant API key", type="password")
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 # Comment below lines if you don't want to read default keys from env vars
-if anthropic_key is None:
+if not anthropic_key:
   anthropic_key = os.getenv('ANTHROPIC_API_KEY') 
 
-if qdrant_key is None:
+if not qdrant_key:
   qdrant_key = os.environ['QDRANT_API_KEY']
 
 qa_chain = None
