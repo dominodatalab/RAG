@@ -13,6 +13,7 @@
   
 *  streamlit_app.py : This file contains code that sets up the UI and workflow for a Streamlit chatbot
 
+On `se-demo` this was run on a `Medium` hardware tier
 
 ## Environment Setup
 
