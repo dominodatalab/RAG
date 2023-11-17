@@ -34,5 +34,7 @@ RUN pip install openai langchain  transformers tiktoken  sentence-transformers \
 
 RUN pip install -i https://test.pypi.org/simple/ streamlit-chat-domino
 ```
+On `se2-demo` this environment is available as `MedRAG`
+
 ### 
 
